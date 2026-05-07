@@ -1,0 +1,74 @@
+image: "/assets/sprites/stickmansheet.png"
+tile_width: 64
+tile_height: 64
+collision_groups: "default"
+animations {
+  id: "LeftBlock"
+  start_tile: 25
+  end_tile: 28
+  fps: 48
+  flip_horizontal: 1
+}
+animations {
+  id: "LeftBlocked"
+  start_tile: 28
+  end_tile: 28
+  playback: PLAYBACK_NONE
+  flip_horizontal: 1
+}
+animations {
+  id: "LeftFist"
+  start_tile: 17
+  end_tile: 24
+  fps: 24
+  flip_horizontal: 1
+}
+animations {
+  id: "LeftIdle"
+  start_tile: 1
+  end_tile: 4
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+  flip_horizontal: 1
+}
+animations {
+  id: "LeftWalk"
+  start_tile: 9
+  end_tile: 14
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+  flip_horizontal: 1
+}
+animations {
+  id: "RightBlock"
+  start_tile: 25
+  end_tile: 28
+  fps: 48
+}
+animations {
+  id: "RightBlocked"
+  start_tile: 28
+  end_tile: 28
+  playback: PLAYBACK_NONE
+}
+animations {
+  id: "RightFist"
+  start_tile: 17
+  end_tile: 24
+  fps: 24
+}
+animations {
+  id: "RightIdle"
+  start_tile: 1
+  end_tile: 4
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+animations {
+  id: "RightWalk"
+  start_tile: 9
+  end_tile: 14
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 12
+}
+extrude_borders: 2
