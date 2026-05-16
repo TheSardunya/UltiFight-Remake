@@ -45,6 +45,10 @@ function update(self, dt)
 	if self.block then self.fist = false end
 
 	self.bump = self.bump and self.jump
+
+	if self.bump and not (self.currentanim == "RightBump" or self.currentanim == "LeftBump") then
+		self.changeanim = true
+	end
 	
 	if char2_health < 1 then
 		factory.create("#factory")
@@ -84,6 +88,9 @@ function update(self, dt)
 	if pos.y <= ground_y and self.jump then
 		pos.y = ground_y
 		self.jump = false
+		if self.bump then
+			factory.create("#bumpfactory", vmath.vector3(pos.x, ground_y - 14, pos.z - 0.1))
+		end
 		self.changeanim = self.bump
 		self.bump = false
 		self.bumpstrt = false
@@ -219,7 +226,7 @@ function on_input(self, action_id, action)
 			
 			self.rightHold = true
 			self.movin = true
-			if not self.block then self.drctn = 1 end
+			if not self.block and not self.bump then self.drctn = 1 end
 			self.changeanim = not self.fist and not self.block and not self.bump
 			
 		else 
@@ -236,7 +243,7 @@ function on_input(self, action_id, action)
 
 			self.leftHold = true
 			self.movin = true
-			if not self.block then self.drctn = -1 end
+			if not self.block and not self.bump then self.drctn = -1 end
 			self.changeanim = not self.fist and not self.block and not self.bump
 
 		else 
