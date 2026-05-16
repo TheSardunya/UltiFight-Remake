@@ -16,6 +16,13 @@ animations {
   playback: PLAYBACK_NONE
 }
 animations {
+  id: "LeftBump"
+  start_tile: 33
+  end_tile: 39
+  fps: 20
+  flip_horizontal: 1
+}
+animations {
   id: "LeftFist"
   start_tile: 17
   end_tile: 24
@@ -49,6 +56,12 @@ animations {
   start_tile: 28
   end_tile: 28
   playback: PLAYBACK_NONE
+}
+animations {
+  id: "RightBump"
+  start_tile: 33
+  end_tile: 39
+  fps: 20
 }
 animations {
   id: "RightFist"

@@ -1,0 +1,140 @@
+{
+  :bundle {
+    :last-bundle-command :project.bundle-windows
+    :linux {
+      :build_report false
+      :contentless false
+      :liveupdate false
+      :platform "x86_64-linux"
+      :texture_compression "enabled"
+      :variant "headless"
+      :with_symbols false
+    }
+    :output-directory "C:\\wx\\Games"
+    :windows {
+      :build_report false
+      :contentless false
+      :liveupdate false
+      :platform "x86_64-win32"
+      :texture_compression "enabled"
+      :variant "release"
+      :with_symbols false
+    }
+  }
+  :code {
+    :breakpoints [
+    ]
+  }
+  :workflow {
+    :open-tabs [
+      [
+        [
+          "/main/main.collection"
+          :scene
+        ]
+        [
+          "/assets/sprites/anims.tilesource"
+          :scene
+        ]
+        [
+          "/assets/sprites/redanims.tilesource"
+          :scene
+        ]
+        [
+          "/assets/scripts/walk.script"
+          :code
+        ]
+        [
+          "/assets/scripts/walk2.script"
+          :code
+        ]
+        [
+          "/input/game.input_binding"
+          :cljfx-form-view
+        ]
+        [
+          "/assets/scripts/global.lua"
+          :code
+        ]
+        [
+          "/assets/sprites/spriteatlas.atlas"
+          :scene
+        ]
+        [
+          "/game.project"
+          :cljfx-form-view
+        ]
+      ]
+    ]
+    :recent-files [
+      [
+        "/README.md"
+        :html
+      ]
+      [
+        "/builtins/render/default.render_script"
+        :code
+      ]
+      [
+        "/assets/scripts/health.lua"
+        :code
+      ]
+      [
+        "/dead.factory"
+        :cljfx-form-view
+      ]
+      [
+        "/builtins/render/default.display_profiles"
+        :cljfx-form-view
+      ]
+      [
+        "/.gitattributes"
+        :code
+      ]
+      [
+        "/.gitignore"
+        :code
+      ]
+      [
+        "/dead.go"
+        :scene
+      ]
+      [
+        "/assets/scripts/global.lua"
+        :code
+      ]
+      [
+        "/input/game.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/main/main.collection"
+        :scene
+      ]
+      [
+        "/assets/sprites/spriteatlas.atlas"
+        :scene
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/assets/sprites/anims.tilesource"
+        :scene
+      ]
+      [
+        "/assets/sprites/redanims.tilesource"
+        :scene
+      ]
+      [
+        "/assets/scripts/walk.script"
+        :code
+      ]
+      [
+        "/assets/scripts/walk2.script"
+        :code
+      ]
+    ]
+  }
+}

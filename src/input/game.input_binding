@@ -38,6 +38,14 @@ key_trigger {
   input: KEY_UP
   action: "jump2"
 }
+key_trigger {
+  input: KEY_S
+  action: "bump"
+}
+key_trigger {
+  input: KEY_DOWN
+  action: "bump2"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"
