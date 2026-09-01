@@ -113,7 +113,7 @@ function fixed_update(self, dt)
 		end
 
 		if keyPressed(self.JumpThroughMovementKey) then
-			if not self.onGround then
+			if not self.onGround and self.dealDmg2 then
 				self.attacking2 = true
 				self.dealDmg3 = false
 				if self.attacking3 and not self.reverse then 
