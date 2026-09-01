@@ -62,7 +62,14 @@ function fixed_update(self, dt)
 		if self.attacking2 then self.attacking1 = false end
 		if self.attacking3 then self.attacking1 = false end
 		if self.attacking4 then self.attacking1 = false end
-		if self.gotHit1 or self.gotHit2 or self.gotHit3 or self.gotHit4 then self.attacking2 = false; self.attacking3 = false end
+		if self.gotHit1 or self.gotHit2 or self.gotHit3 or self.gotHit4 then 
+			self.attacking2 = false
+			self.attacking3 = false 
+			self.gotHit2 = false
+			self.gotHit3 = false
+			self.gotHit4 = false
+
+		end
 
 
 
