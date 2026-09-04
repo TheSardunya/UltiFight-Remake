@@ -747,7 +747,31 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "vfxCreator"
+  id: "vfxCreator2"
+  data: "components {\n"
+  "  id: \"impact\"\n"
+  "  component: \"/impact.factory\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"stickmanTrailL\"\n"
+  "  component: \"/stickmanTrailL.particlefx\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"stickmanTrailR\"\n"
+  "  component: \"/stickmanTrailR.particlefx\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"redmanTrailL\"\n"
+  "  component: \"/redmanTrailL.particlefx\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"redmanTrailR\"\n"
+  "  component: \"/redmanTrailR.particlefx\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "vfxCreator1"
   data: "components {\n"
   "  id: \"impact\"\n"
   "  component: \"/impact.factory\"\n"
