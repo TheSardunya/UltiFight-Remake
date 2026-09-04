@@ -66,11 +66,13 @@ function fixed_update(self, dt)
 			self.attacking2 = false
 			self.attacking3 = false 
 			self.gotHit2 = false
-			self.gotHit3 = false
 			self.gotHit4 = false
 			
 		end
-
+		if self.gotHit3 then 
+			self.gotHit1 = false
+		end
+		
 
 
 		if self.gotHit1 then

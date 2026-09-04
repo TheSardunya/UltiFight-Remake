@@ -87,8 +87,11 @@ function dashFist(self)
 
 	
 	
-	if self.attacking4 then
+	if self.attacking4 and self.dashCooldown == 0 then
 		self.dashCooldown = 1
+
+		if self.direction == 1 then vfx_particle(self.rTrailUrl, vmath.vector3(self.pos.x + 160, self.pos.y, self.pos.z)) end
+		if self.direction == -1 then vfx_particle(self.lTrailUrl, vmath.vector3(self.pos.x - 160, self.pos.y, self.pos.z)) end
 		
 		local endPos = vmath.vector3()
 		local startPos = vmath.vector3()
@@ -124,7 +127,7 @@ function dashFist(self)
 
 		if (rcast or rcast2) and self.dealDmg4 then
 			if (rcast.group == hash(self.opponent_str) or rcast2.group == hash(self.opponent_str)) then
-				vfx("/vfxCreator#impact", vmath.vector3(smap[self.opponent].pos.x, self.pos.y + 12, self.pos.z))
+				vfx(self.impactUrl, vmath.vector3(smap[self.opponent].pos.x, self.pos.y + 12, self.pos.z))
 				self.dealDmg4 = false
 				
 				smap[self.opponent].hp = smap[self.opponent].hp - 10
@@ -134,12 +137,12 @@ function dashFist(self)
 		end
 		if not (rcast or rcast2) then self.dealDmg4 = false end
 		
+		
+		
 		if self.direction == 1 then self.pos.x = self.pos.x + 256 end
 		if self.direction == -1 then self.pos.x = self.pos.x - 256 end
 		self.attacking4 = false 
 		self.dealDmg4 = true 
-		if self.direction == 1 then vfx_particle(self.rTrailUrl, vmath.vector3(self.pos.x - 96, self.pos.y, self.pos.z)) end
-		if self.direction == -1 then vfx_particle(self.lTrailUrl, vmath.vector3(self.pos.x + 96, self.pos.y, self.pos.z)) end
 	end
 end
 
@@ -160,7 +163,7 @@ function fist(self)
 
 		if rcast then
 			if rcast.group == hash(self.opponent_str) then
-				vfx("/vfxCreator#impact", vmath.vector3(smap[self.opponent].pos.x, self.pos.y + 12, self.pos.z))
+				vfx(self.impactUrl, vmath.vector3(smap[self.opponent].pos.x, self.pos.y + 12, self.pos.z))
 				
 				smap[self.opponent].hp = smap[self.opponent].hp - 20
 				smap[self.opponent].gotHit1 = true
@@ -180,7 +183,7 @@ function bump(self)
 			vfxPos.y = default_y - 32
 			if self.direction == 1 then vfxPos = setOffset(vfxPos, -6) end
 			if self.direction == -1 then vfxPos = setOffset(vfxPos, 6) end
-			vfx("/vfxCreator#impact", vfxPos)
+			vfx(self.impactUrl, vfxPos)
 		end
 		
 		self.dealDmg2 = true
@@ -200,7 +203,7 @@ function bump(self)
 		if rcast then
 			if rcast.group == hash(self.opponent_str) then
 				
-				vfx("/vfxCreator#impact", vmath.vector3(self.pos.x, smap[self.opponent].pos.y + 18, self.pos.z))
+				vfx(self.impactUrl, vmath.vector3(self.pos.x, smap[self.opponent].pos.y + 18, self.pos.z))
 				
 				smap[self.opponent].hp = smap[self.opponent].hp - 25
 				smap[self.opponent].gotHit2 = true
@@ -238,7 +241,7 @@ function flykick(self)
 		if rcast then
 			if rcast.group == hash(self.opponent_str) then
 
-				vfx("/vfxCreator#impact", vmath.vector3(smap[self.opponent].pos.x, self.pos.y, self.pos.z))
+				vfx(self.impactUrl, vmath.vector3(smap[self.opponent].pos.x, self.pos.y, self.pos.z))
 
 				smap[self.opponent].hp = smap[self.opponent].hp - 35
 				smap[self.opponent].gotHit3 = true
@@ -286,6 +289,7 @@ function animate_direction(self, anim_str_r, anim_str_l, end_function, url)
 end
 
 function initChar1(self)
+	self.impactUrl = "/vfxCreator1#impact"
 	self.direction = 1
 	self.idle = true
 	self.RightMovementKey = "D"
@@ -316,11 +320,12 @@ function initChar1(self)
 	self.dashCooldown = 0
 	self.reverse = false
 	self.dead = false
-	self.rTrailUrl = "/vfxCreator#stickmanTrailR"
-	self.lTrailUrl = "/vfxCreator#stickmanTrailL"
+	self.rTrailUrl = "/vfxCreator1#stickmanTrailR"
+	self.lTrailUrl = "/vfxCreator1#stickmanTrailL"
 end
 
 function initChar2(self)
+	self.impactUrl = "/vfxCreator2#impact"
 	self.direction = -1
 	self.idle = true
 	self.RightMovementKey = "Right"
@@ -351,8 +356,8 @@ function initChar2(self)
 	self.dashCooldown = 0
 	self.reverse = false
 	self.dead = false
-	self.rTrailUrl = "/vfxCreator#redmanTrailR"
-	self.lTrailUrl = "/vfxCreator#redmanTrailL"
+	self.rTrailUrl = "/vfxCreator2#redmanTrailR"
+	self.lTrailUrl = "/vfxCreator2#redmanTrailL"
 end
 
 function resetGameStatus()
